@@ -7,15 +7,15 @@ const NewsContainer = () => {
     const [myValue, setmyValue] = useState('')
 
     // ===== Fetch Data ========
-  const options = {
-	method: 'GET',
-	headers: {
-		'X-RapidAPI-Key': 'c4880e6816msh72c0f1da6b045a3p1d2cdcjsnce667af61f88',
-		'X-RapidAPI-Host': 'contextualwebsearch-websearch-v1.p.rapidapi.com'
-	}
-};
-
-useEffect(() => {
+    
+    useEffect(() => {
+        const options = {
+          method: 'GET',
+          headers: {
+              'X-RapidAPI-Key': 'c4880e6816msh72c0f1da6b045a3p1d2cdcjsnce667af61f88',
+              'X-RapidAPI-Host': 'contextualwebsearch-websearch-v1.p.rapidapi.com'
+          }
+      };
         const getArticle = () =>{
          fetch(`https://contextualwebsearch-websearch-v1.p.rapidapi.com/api/Search/ImageSearchAPI?q=+${articles}&pageNumber=1&pageSize=10&autoCorrect=true`, options)
         .then(response => response.json())
