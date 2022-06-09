@@ -53,7 +53,7 @@ fetch(`https://contextualwebsearch-websearch-v1.p.rapidapi.com/api/Search/ImageS
             
             {container && container.map(item => (
                 <div className='news_content'>
-                    <img src={item.url} />
+                    <img src={item.url} alt='news img'/>
                     <div className="text-content">
                       <h3 className='title'>{item.title}</h3>
                     </div>
