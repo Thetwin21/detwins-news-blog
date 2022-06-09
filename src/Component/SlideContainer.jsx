@@ -4,19 +4,19 @@ import BtnSlider from './BtnSlider'
 
 const SlideContainer = () => {
     const [slideIndex, setSlideIndex] = useState(1);
-  
-    const interval = () => {
-        setInterval(() => {
-       if(slideIndex !== slider.length){
-             setSlideIndex(slideIndex + 1)
-         }else if (slideIndex === slider.length){
-             setSlideIndex(1)
-         }
-    }, 4000);
-    }
-
-  // autoplay
- useEffect(() => {
+    
+    // autoplay
+    useEffect(() => {
+     
+       const interval = () => {
+           setInterval(() => {
+          if(slideIndex !== slider.length){
+                setSlideIndex(slideIndex + 1)
+            }else if (slideIndex === slider.length){
+                setSlideIndex(1)
+            }
+       }, 4000);
+       }
     interval()
    }, [slideIndex])
     const slideRight = () => {

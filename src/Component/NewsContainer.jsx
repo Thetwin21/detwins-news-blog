@@ -14,15 +14,16 @@ const NewsContainer = () => {
 		'X-RapidAPI-Host': 'contextualwebsearch-websearch-v1.p.rapidapi.com'
 	}
 };
-    const getArticle = () =>{
 
-     fetch(`https://contextualwebsearch-websearch-v1.p.rapidapi.com/api/Search/ImageSearchAPI?q=+${articles}&pageNumber=1&pageSize=10&autoCorrect=true`, options)
-	.then(response => response.json())
-	.then(data => setContainer(data.value))
-	.catch(err => console.error(err));
-    }
+useEffect(() => {
+        const getArticle = () =>{
+         fetch(`https://contextualwebsearch-websearch-v1.p.rapidapi.com/api/Search/ImageSearchAPI?q=+${articles}&pageNumber=1&pageSize=10&autoCorrect=true`, options)
+        .then(response => response.json())
+        .then(data => setContainer(data.value))
+        .catch(err => console.error(err));
+        };
 
-    useEffect(() => {
+
         getArticle()
     }, [articles])
 
