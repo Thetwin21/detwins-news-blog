@@ -50,8 +50,7 @@ fetch(`https://contextualwebsearch-websearch-v1.p.rapidapi.com/api/Search/ImageS
         </div>
 
         <div className='news_container'>
-            
-            {container && container.map(item => (
+            {container ? container.map(item => (
                 <div className='news_content'>
                     <img src={item.url} alt='news img'/>
                     <div className="text-content">
@@ -60,9 +59,8 @@ fetch(`https://contextualwebsearch-websearch-v1.p.rapidapi.com/api/Search/ImageS
                     <div className="overlay">
                         <p><a href={item.webpageUrl}>Read More...</a></p>
                     </div>
-
                 </div>
-            ))}
+            )) : <p> No News Available</p>}
             
         </div>
         </div>
